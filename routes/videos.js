@@ -31,17 +31,11 @@ videosRouter.get ("/:videoId", (req,res)=> {
     res.status(200).json(video);
 })
 
-// videosRouter.post ("/upload", (req,res) => {
-//     const videos = readVideos();
-
-//     const newVideo = {
-//         title: req.body.title,
-//         description:req.body.description,
-//         channel:"By Masha",
-//         id: uuidv4(),
-//         timestamp: Date.now(),
-//     }
-// })
+// Function to write videos
+function writeVideos(data) {
+    const stringifiedData = JSON.stringify(data);
+    fs.writeFileSync("./data/videos.json", stringifiedData);
+  }
 
 //post video 
 videosRouter.post("/", (req, res) => {
@@ -52,9 +46,9 @@ videosRouter.post("/", (req, res) => {
         title: req.body.title,
         description: req.body.description,
         channel: "By Masha Masha",
-        // image: "",
-        views: 0,
-        likes: 0,
+        image: "../public/images/image2.jpeg",
+        views: "10,934",
+        likes: "3,793",
         timestamp: Date.now(),
         comments: [
             {
@@ -64,11 +58,10 @@ videosRouter.post("/", (req, res) => {
             },
         ],
     }
-    console.log(newVideo);
     videos.push(newVideo);
-    fs.writeFileSync("./data/videos.json", JSON.stringify(videos));
+    writeVideos(videos);
 
-    res.status(201).send(videos);
+    res.status(201).send();
 })
 
 module.exports = videosRouter;
