@@ -8,6 +8,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 app.use ('/videos', videoRoutes);
+app.use("/images", express.static("./public/images"));
 
 //comment 
 app.listen(PORT, ()=> {

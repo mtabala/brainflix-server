@@ -45,14 +45,26 @@ videosRouter.post("/", (req, res) => {
         id: uuidv4(),
         title: req.body.title,
         description: req.body.description,
-        channel: "By Masha Masha",
-        image: "../public/images/image2.jpeg",
+        channel: "Masha Masha",
+        image: "http://localhost:9090/images/Upload-video-preview.jpg",
         views: "10,934",
         likes: "3,793",
+        duration: "4:20",
+        video: "https://project-2-api.herokuapp.com/stream",
         timestamp: Date.now(),
         comments: [
             {
                 comment: "Wow it works! How exciting",
+                name: "Masha Tabala",
+                timestamp: Date.now(),
+            },
+            {
+                comment: "Giiiiirrrll! You made it work!!!",
+                name: "Masha Tabala",
+                timestamp: Date.now(),
+            },
+            {
+                comment: "OMG IT IS WORKING",
                 name: "Masha Tabala",
                 timestamp: Date.now(),
             },
