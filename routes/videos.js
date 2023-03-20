@@ -54,16 +54,19 @@ videosRouter.post("/", (req, res) => {
         timestamp: Date.now(),
         comments: [
             {
+                id: uuidv4(),
                 comment: "Wow it works! How exciting",
                 name: "Masha Tabala",
                 timestamp: Date.now(),
             },
             {
+                id: uuidv4(),
                 comment: "Giiiiirrrll! You made it work!!!",
                 name: "Masha Tabala",
                 timestamp: Date.now(),
             },
             {
+                id: uuidv4(),
                 comment: "OMG IT IS WORKING",
                 name: "Masha Tabala",
                 timestamp: Date.now(),
